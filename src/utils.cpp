@@ -5,7 +5,6 @@
 #include <memory.h>
 
 void generate_random(unsigned char* random, int size) {
-	srand(time(NULL));
 	const long MAX = 1L << 32L;
 	while (size > 0) {
 		uint32_t r = rand() % MAX;
