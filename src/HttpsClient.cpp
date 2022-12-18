@@ -5,6 +5,7 @@
 #include <unistd.h>
 #include "mlog.h"
 #include "base_struct.h"
+#include <stdio.h>
 
 HttpsClient::HttpsClient(std::string ip, int port) : m_ip(ip), m_port(port) {
 
@@ -33,8 +34,8 @@ int HttpsClient::InitTcpConnect() {
 	struct sockaddr_in address;
 	bzero(&address, sizeof(address));
 	address.sin_family = AF_INET;
-	inet_pton(AF_INET, m_ip, &address.sin_addr);
-	address.in_port = htons(m_port);
+	inet_pton(AF_INET, m_ip.c_str(), &address.sin_addr);
+	address.sin_port = htons(m_port);
 	int m_sockfd = socket(PF_INET, SOCK_STREAM, 0);
 	const int BUFFER_SIZE = 128;
 	char log_buffer[BUFFER_SIZE];

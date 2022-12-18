@@ -1,5 +1,5 @@
-# ifndef BASE_STRUCT_H
-# #define BASE_STRUCT_H
+#ifndef BASE_STRUCT_H
+#define BASE_STRUCT_H
 
 #include <stdint.h>
 #include <memory.h>
@@ -42,7 +42,7 @@ struct ServerHello {
 	ServerHello() {
 		memset(random, 0, 32);
 		memset(legacy_session_id_echo.data, 0, 32);
-		memset(cipher_suit, 0, 2);
+		memset(cipher_suite, 0, 2);
 		memset(extensions.data, 0, 1 << 16);
 	}
 };
