@@ -2,8 +2,8 @@
 
 project ("HttpsImpl")
 
-# 将源代码添加到此项目的可执行文件。
-add_executable (HttpsImpl "src/HttpsImpl.cpp" "src/HttpsImpl.h")
+aux_source_directory(src all_src)
+add_executable (HttpsImpl ${all_src})
 
 if (CMAKE_VERSION VERSION_GREATER 3.12)
   set_property(TARGET HttpsImpl PROPERTY CXX_STANDARD 20)

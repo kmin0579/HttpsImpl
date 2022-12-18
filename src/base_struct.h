@@ -24,10 +24,10 @@ struct ClientHello {
 
 	ClientHello() {
 		memset(random, 0, 32);
-		memset(legacy_session_id.data, 32);
-		memset(cipher_suites.data, 1 << 16);
-		memset(legacy_compression_methods.data, 1 << 8);
-		memset(extensions.data, 1 << 16);
+		memset(legacy_session_id.data, 0, 32);
+		memset(cipher_suites.data, 0, 1 << 16);
+		memset(legacy_compression_methods.data, 0, 1 << 8);
+		memset(extensions.data, 0, 1 << 16);
 	}
 };
 
@@ -41,9 +41,9 @@ struct ServerHello {
 
 	ServerHello() {
 		memset(random, 0, 32);
-		memset(legacy_session_id_echo.data, 32);
-		memset(cipher_suit, 2);
-		memset(extensions.data, 1 << 16);
+		memset(legacy_session_id_echo.data, 0, 32);
+		memset(cipher_suit, 0, 2);
+		memset(extensions.data, 0, 1 << 16);
 	}
 };
 

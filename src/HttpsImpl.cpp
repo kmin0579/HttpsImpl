@@ -4,6 +4,7 @@
 #include "HttpsImpl.h"
 #include "utils.h"
 #include <stdio.h>
+#include <memory.h>
 
 using namespace std;
 
