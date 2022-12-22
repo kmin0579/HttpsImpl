@@ -12,7 +12,7 @@ using namespace std;
 
 int main()
 {
-	srand(time(NULL));
+	srand(timeus());
 
 	unsigned char random[32];
 	memset(random, 0, 4);

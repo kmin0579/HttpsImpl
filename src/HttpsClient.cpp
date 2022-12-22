@@ -6,6 +6,7 @@
 #include "mlog.h"
 #include "base_struct.h"
 #include <stdio.h>
+#include "utils.h"
 
 HttpsClient::HttpsClient(std::string ip, int port) : m_ip(ip), m_port(port) {
 
@@ -56,6 +57,8 @@ int HttpsClient::InitTcpConnect() {
 int HttpsClient::TLSHandShake() {
 	ClientHello client;
 	client.legacy_version = TLS_V_1_2;
+	generate_random(client.random, 32);
+	
 }
 
 void HttpsClient::Close() {

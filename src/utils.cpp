@@ -3,6 +3,7 @@
 #include <stdlib.h>
 #include <stdint.h>
 #include <memory.h>
+#include <sys/time.h>
 
 void generate_random(unsigned char* random, int size) {
 	const long MAX = 1L << 32L;
@@ -16,4 +17,10 @@ void generate_random(unsigned char* random, int size) {
 			}
 		}
 	}
+}
+
+uint64_t timeus() {
+	struct timeval tv;
+	gettimeofday(&tv, NULL);
+	return tv.tv_usec;
 }
